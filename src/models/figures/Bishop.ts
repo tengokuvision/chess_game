@@ -18,7 +18,8 @@ export class Bishop extends Figure {
 	}
 
 	canAttack(target: Cell): boolean {
-		if (this.canMove(target)) return true
+		if (!super.canAttack(target)) return false
+		if (this.cell.isEmptyDiagonal(target)) return true
 		return false
 	}
 }

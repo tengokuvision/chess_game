@@ -58,19 +58,6 @@ export class Board {
 		}
 	}
 
-	public getAttackers(target: Cell, attackerColor: Colors): Figure[] {
-		let attackers: Figure[] = []
-		for (let y = 0; y < 8; y++) {
-			for (let x = 0; x < 8; x++) {
-				const cell = this.getCell(x, y)
-				if (cell.figure && cell.figure.color === attackerColor && cell.figure.canAttack(target)) {
-					attackers.push(cell.figure)
-				}
-			}
-		}
-		return attackers
-	}
-
 	public getKingByColor(color: Colors): King | null {
 		for (let i = 0; i < 8; i++) {
 			for (let j = 0; j < 8; j++) {

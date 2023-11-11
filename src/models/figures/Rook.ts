@@ -22,7 +22,9 @@ export class Rook extends Figure {
 	}
 
 	canAttack(target: Cell): boolean {
-		if (this.canMove(target)) return true
+		if (!super.canAttack(target)) return false
+		if (this.cell.isEmptyVertical(target)) return true
+		if (this.cell.isEmptyHorizontal(target)) return true
 		return false
 	}
 }

@@ -35,8 +35,8 @@ export class Figure {
 	}
 
 	canAttack(target: Cell): boolean {
-		if (target.figure?.name === FigureNames.KING) return true
-		return this.canMove(target)
+		if (target.figure?.color === this.color) return false
+		return true
 	}
 
 	moveFigure(target: Cell) {}
